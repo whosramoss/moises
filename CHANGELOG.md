@@ -1,10 +1,13 @@
 # 1.0.0
 
-- Add `Application` and `Job` endpoints
-    - GET - `/api/application`
-- Add `Job` endpoints
-    - GET - `/api/job` 
-    - GET - `/api/job/:id`    
-    - POST - `/api/job/`
-    - DELETE - `/api/job/:id`
-- Unit Tests
+- Add `Models`, `Enums`, and `Exceptions` with their respective `Unit Tests`
+- Add new endpoints : 
+
+| Description             	| Method   	| Path               	|
+|-------------------------	|----------	|--------------------	|
+| Get Application details 	| `GET`    	| `/api/application` 	|
+| Get all Jobs            	| `GET`    	| `/api/job`         	|
+| Get Job by id           	| `GET`    	| `/api/job/:id`     	|
+| Create a new Job        	| `POST`   	| `/api/job/`        	|
+| Delete a Job by id      	| `DELETE` 	| `/api/job/:id`     	|
+
