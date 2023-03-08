@@ -18,8 +18,6 @@ void main() {
   group('[Model][MoisesNewJobModel]', () {
     test('must convert from json to model', () async {
       var v = MoisesNewJobModel.fromJson(json);
-      debugPrint(json.toString());
-      debugPrint(v.toString());
       expect(v, isA<MoisesNewJobModel>());
       expect(v, equals(model));
     });

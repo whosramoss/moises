@@ -20,9 +20,8 @@ void main() {
 
   late IMoisesJob job;
 
-  const mockId = '00000000-0000-0000-0000-000000000000';
-
-  const mockJson = {
+  const String mockId = '00000000-0000-0000-0000-000000000000';
+  const Map<String, dynamic> mockJson = {
     'id': '00000000-0000-0000-0000-000000000000',
     'app': 'Default Application',
     'workflow': 'Orchestrator runtime',
@@ -30,35 +29,10 @@ void main() {
     'batchName': null,
     'result': {
       'Job Name': 'https://storage.googleapis.com/',
+      'Job Name 2': 'https://storage.googleapis.com/',
     },
     'workflowParams': {
-      'apiKey': '',
       'inputUrl': 'https://www.dropbox.com/',
-      'graph': {
-        'edges': [
-          {
-            'id': 'reactflow__edge',
-            'source': 'input_0',
-            'sourceHandle': 'STEMS--VOCALS-BASS-DRUMS-OTHER',
-            'target': 'outputFileUrl',
-            'targetHandle': 'inputFileUrl',
-          },
-        ],
-        'nodes': [
-          {
-            'id': 'input_0',
-            'data': {'label': 'Original Audio Input', 'settings': {}},
-            'type': 'ioInputFile',
-            'width': 200,
-            'height': 46,
-            'position': {'x': 250, 'y': 5},
-            'deletable': false,
-            'dragHandle': '.custom-drag-handle',
-            'sourcePosition': 'right',
-            'targetPosition': 'left'
-          },
-        ]
-      },
     },
     'name': 'Try Orchestrator workflow',
     'createdAt': '2023-01-01T01:01:11.600Z',

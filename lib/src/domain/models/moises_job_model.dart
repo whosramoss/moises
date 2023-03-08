@@ -1,8 +1,7 @@
 import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import 'package:moises/moises.dart';
+import 'package:moises/src/domain/models/moises_workflow_params_model.dart';
 
 part 'moises_job_model.g.dart';
 
