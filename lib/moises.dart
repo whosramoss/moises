@@ -17,11 +17,6 @@ export 'src/domain/models/moises_job_filter_model.dart';
 export 'src/domain/models/moises_new_job_model.dart';
 export 'src/domain/models/moises_new_job_params_model.dart';
 export 'src/domain/models/moises_new_job_result_model.dart';
-export 'src/domain/models/moises_workflow_graph_edge_model.dart';
-export 'src/domain/models/moises_workflow_graph_model.dart';
-export 'src/domain/models/moises_workflow_graph_node_data_model.dart';
-export 'src/domain/models/moises_workflow_graph_node_model.dart';
-export 'src/domain/models/moises_workflow_graph_node_position_model.dart';
 export 'src/domain/models/moises_workflow_params_model.dart';
 
 /// enums
