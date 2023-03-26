@@ -12,25 +12,25 @@ Future<void> main() async {
   /// Get Application
   await getApplication(moises);
 
-  // /// Get All Jobs
-  // const MoisesJobFilterModel filter = MoisesJobFilterModel(status: MoisesJobStatusEnum.succeeded);
-  // await getAllJobs(moises, filter);
+  /// Get All Jobs
+  const MoisesJobFilterModel filter = MoisesJobFilterModel(status: MoisesJobStatusEnum.succeeded);
+  await getAllJobs(moises, filter);
 
-  // /// Get Job
-  // const String jobId = '00000000-0000-0000-0000-000000000000';
-  // await getJobById(moises, jobId);
+  /// Get Job
+  const String jobId = '00000000-0000-0000-0000-000000000000';
+  await getJobById(moises, jobId);
 
-  // /// Delete a Job
-  // await deleteJob(moises, jobId);
+  /// Delete a Job
+  await deleteJob(moises, jobId);
 
-  // /// Create a Job
-  // const newJob = MoisesNewJobModel(
-  //   name: 'JOB NAME',
-  //   workflow: 'my-workflow-id',
-  //   params: MoisesNewJobParamsModel(inputUrl: 'https://your-server.com/some-audio.m4a'),
-  // );
+  /// Create a Job
+  const newJob = MoisesNewJobModel(
+    name: 'JOB NAME',
+    workflow: 'my-workflow-id',
+    params: MoisesNewJobParamsModel(inputUrl: 'https://your-server.com/some-audio.m4a'),
+  );
 
-  // await createJob(moises, newJob);
+  await createJob(moises, newJob);
 }
 
 Future<void> getApplication(Moises moises) async {
