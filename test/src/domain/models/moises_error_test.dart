@@ -6,11 +6,9 @@ void main() {
 
   const json = {'statusCode': 401, 'code': 'P2023', 'error': 'Unauthorized', 'message': ''};
 
-  group('[Model][MoisesError]', () {
-    test('must convert from json to model', () async {
-      var v = MoisesError.fromJson(json);
-      expect(v, isA<MoisesError>());
-      expect(v, equals(model));
-    });
+  test('must convert from json to model', () async {
+    var v = MoisesError.fromJson(json);
+    expect(v, isA<MoisesError>());
+    expect(v, equals(model));
   });
 }

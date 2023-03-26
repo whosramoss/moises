@@ -25,7 +25,7 @@ enum MoisesJobStatusEnum {
   /// Translates a `String` type status into a `MoisesJobStatusEnum`
   static MoisesJobStatusEnum getEnumByString(String status) {
     return MoisesJobStatusEnum.values.firstWhere(
-      (e) => status == e.status,
+      (e) => status.toUpperCase() == e.status.toUpperCase(),
       orElse: () => MoisesJobStatusEnum.none,
     );
   }

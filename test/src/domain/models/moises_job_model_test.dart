@@ -38,11 +38,9 @@ void main() {
     'completedAt': '2023-01-01T01:01:11.600Z',
   };
 
-  group('[Model][MoisesJobModel]', () {
-    test('must convert from json to model', () async {
-      var v = MoisesJobModel.fromJson(json);
-      expect(v, isA<MoisesJobModel>());
-      expect(v, equals(model));
-    });
+  test('must convert from json to model', () async {
+    var v = MoisesJobModel.fromJson(json);
+    expect(v, isA<MoisesJobModel>());
+    expect(v, equals(model));
   });
 }

@@ -8,11 +8,9 @@ void main() {
 
   const json = {'inputUrl': 'https://your-server.com/some-audio.m4a'};
 
-  group('[Model][MoisesNewJobParamsModel]', () {
-    test('must convert from json to model', () async {
-      var v = MoisesNewJobParamsModel.fromJson(json);
-      expect(v, isA<MoisesNewJobParamsModel>());
-      expect(v, equals(model));
-    });
+  test('must convert from json to model', () async {
+    var v = MoisesNewJobParamsModel.fromJson(json);
+    expect(v, isA<MoisesNewJobParamsModel>());
+    expect(v, equals(model));
   });
 }
