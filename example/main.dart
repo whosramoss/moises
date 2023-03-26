@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'package:moises/moises.dart';
-import 'moises_local_key.dart';
 
 Future<void> main() async {
   /// Searching for local keys

@@ -6,16 +6,14 @@ class MoisesLocalKey {
   MoisesLocalKey._();
 
   /// Key variable
-  static String key = 'API_KEY';
+  static String key = 'MOISES_API_KEY';
 
-  /// FileName variable
-  static String fileName = '.env.json';
-
-  /// Create a file [.env.json], inside the example folder and add your Key in this format:
+  /// Create a file (example: ".env.json"), inside the example folder and add your Key in this format:
   /// `{"API_KEY":"00000000-0000-0000-0000-000000000000"}`
-  static Future<String> get() async {
+  static Future<String> get({String? fileName}) async {
     try {
-      final File file = File(fileName);
+      final String localFileName = fileName ?? '.env.json';
+      final File file = File(localFileName);
       final String content = await file.readAsString();
       final Map<String, dynamic> json = jsonDecode(content) as Map<String, dynamic>;
       final bool hasKey = json.keys.contains(key);

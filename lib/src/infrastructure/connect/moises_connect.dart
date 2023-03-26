@@ -1,7 +1,7 @@
 import 'package:moises/src/domain/exception/moises_exception.dart';
 import 'package:moises/src/infrastructure/connect/i_moises_connect.dart';
 import 'package:dio/dio.dart';
-import 'package:moises/src/infrastructure/utils/constants.dart';
+import 'package:moises/src/infrastructure/utils/moises_constants.dart';
 
 /// Implementation class for `MoisesConnect` method requests
 class MoisesConnect implements IMoisesConnect {
