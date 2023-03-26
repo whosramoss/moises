@@ -44,7 +44,7 @@ jobs:
     needs: build
     name: Upload tests to codecov
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    # if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
