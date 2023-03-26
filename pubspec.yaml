@@ -2,8 +2,13 @@ name: moises
 description: A Moises.ai API Client for dart
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0
+
 repository: https://github.com/whosramoss/moises
 issue_tracker: https://github.com/whosramoss/moises/issues
+
+screenshots:
+  - description: Dart client to access Moises developer account data
+    path: resources/images/icon.png
 
 
 environment:
