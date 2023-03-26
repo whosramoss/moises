@@ -8,10 +8,14 @@ build/
 
 # Omit committing pubspec.lock for library packages; see
 # https://dart.dev/guides/libraries/private-files#pubspeclock.
-pubspec.lock
+/pubspec.lock
 
 # VS Code
-.vscode/
+# .vscode/
 
 # Environment variables
 example/.env.json
+
+# Ignore coverage tests
+.coverage/
+codecov
