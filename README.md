@@ -11,9 +11,9 @@
   <a href="https://github.com/whosramoss/moises/actions?query=workflow%3ABuild">
     <img src="https://github.com/whosramoss/moises/workflows/Build/badge.svg" alt="Build Status">
   </a>
-  <!-- <a href="https://github.com/whosramoss/moises/actions">
-    <img src="https://codecov.io/gh/whosramoss/moises/branch/master/graph/badge.svg" alt="Codecov">
-  </a> -->
+  <a href="https://github.com/whosramoss/moises/actions">
+    <img src="https://codecov.io/gh/whosramoss/moises/branch/main/graph/badge.svg" alt="Codecov">
+  </a>
   <br>
 </div>
 
