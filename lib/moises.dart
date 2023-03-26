@@ -28,5 +28,5 @@ export 'src/domain/enums/media_output_codec_enum.dart';
 
 /// utils
 ///
-export 'src/infrastructure/utils/moises_local_key.dart';
+export 'src/infrastructure/utils/moises_key.dart';
 export 'src/infrastructure/utils/moises_constants.dart';

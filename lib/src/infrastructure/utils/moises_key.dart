@@ -2,14 +2,16 @@ import 'dart:convert';
 import 'dart:io';
 
 /// Get Moises Local Keys
-class MoisesLocalKey {
-  MoisesLocalKey._();
+class MoisesKey {
+  MoisesKey._();
 
   /// Key variable
-  static String key = 'MOISES_API_KEY';
+  static String key = 'MOISES_DEVELOPER_API_KEY';
 
   /// Create a file (example: ".env.json"), inside the example folder and add your Key in this format:
-  /// `{"API_KEY":"00000000-0000-0000-0000-000000000000"}`
+  /// `{
+  ///     "MOISES_DEVELOPER_API_KEY" : "00000000-0000-0000-0000-000000000000"
+  /// }`
   static Future<String> get({String? fileName}) async {
     try {
       final String localFileName = fileName ?? '.env.json';
