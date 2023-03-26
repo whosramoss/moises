@@ -1,6 +1,5 @@
 name: moises
 description: A Moises.ai API Client for dart
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0
 
 repository: https://github.com/whosramoss/moises
@@ -22,7 +21,7 @@ dependencies:
   equatable: ^2.0.5
 
 dev_dependencies:
-  flutter_test:
+  flutter_test: 
     sdk: flutter
   flutter_lints: ^2.0.0
   mockito: ^5.0.0
