@@ -6,11 +6,9 @@ void main() {
 
   const json = {'inputUrl': 'https://www.dropbox.com/'};
 
-  group('[Model][MoisesWorkflowParamsModel]', () {
-    test('must convert from json to model', () async {
-      var v = MoisesWorkflowParamsModel.fromJson(json);
-      expect(v, isA<MoisesWorkflowParamsModel>());
-      expect(v, equals(model));
-    });
+  test('must convert from json to model', () async {
+    var v = MoisesWorkflowParamsModel.fromJson(json);
+    expect(v, isA<MoisesWorkflowParamsModel>());
+    expect(v, equals(model));
   });
 }

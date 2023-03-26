@@ -1,10 +1,9 @@
 import 'dart:developer';
 import 'package:moises/moises.dart';
-import 'moises_local_key.dart';
 
 Future<void> main() async {
   /// Searching for local keys
-  String key = await MoisesLocalKey.get();
+  String key = await MoisesKey.get();
   if (key.isEmpty) return;
 
   /// Create a new client

@@ -1,6 +1,7 @@
 import 'package:moises/src/domain/exception/moises_exception.dart';
 import 'package:moises/src/infrastructure/connect/i_moises_connect.dart';
 import 'package:dio/dio.dart';
+import 'package:moises/src/infrastructure/utils/moises_constants.dart';
 
 /// Implementation class for `MoisesConnect` method requests
 class MoisesConnect implements IMoisesConnect {
@@ -14,7 +15,7 @@ class MoisesConnect implements IMoisesConnect {
     final defaultDio = Dio();
 
     defaultDio.options = BaseOptions(
-      baseUrl: 'https://developer-api.moises.ai/api/',
+      baseUrl: MoisesConstants.api,
       headers: {'Authorization': apiKey},
     );
 

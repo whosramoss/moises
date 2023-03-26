@@ -24,23 +24,21 @@ void main() {
     application = MoisesApplication(mockConnect);
   });
 
-  group('[MoisesApplication]', () {
-    test('must have all instances injected', () {
-      expect(mockConnect, isA<MockMoisesConnect>());
-      expect(application, isA<MoisesApplication>());
+  test('must have all instances injected', () {
+    expect(mockConnect, isA<MockMoisesConnect>());
+    expect(application, isA<MoisesApplication>());
+  });
+
+  test('[GET] - must return a MosesApplicationModel', () async {
+    when(
+      mockConnect.get(any),
+    ).thenAnswer((_) async {
+      return Response(data: mockJson, requestOptions: RequestOptions());
     });
 
-    test('[GET] - must return a MosesApplicationModel', () async {
-      when(
-        mockConnect.get(any),
-      ).thenAnswer((_) async {
-        return Response(data: mockJson, requestOptions: RequestOptions());
-      });
+    var result = await application.get();
 
-      var result = await application.get();
-
-      expect(result, isA<MoisesApplicationModel>());
-      expect(result, isNotNull);
-    });
+    expect(result, isA<MoisesApplicationModel>());
+    expect(result, isNotNull);
   });
 }

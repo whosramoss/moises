@@ -44,79 +44,78 @@ void main() {
     job = MoisesJob(mockConnect);
   });
 
-  group('[MoisesJob]', () {
-    test('must have all instances injected', () {
-      expect(mockConnect, isA<MockMoisesConnect>());
-      expect(job, isA<MoisesJob>());
-    });
-    test('[GET BY ID] must return a MoisesJobModel', () async {
-      when(
-        mockConnect.get(any),
-      ).thenAnswer((_) async {
-        return Response(data: mockJson, requestOptions: RequestOptions());
-      });
+  test('must have all instances injected', () {
+    expect(mockConnect, isA<MockMoisesConnect>());
+    expect(job, isA<MoisesJob>());
+  });
 
-      var result = await job.get(mockId);
-
-      expect(result, isA<MoisesJobModel>());
-      expect(result, isNotNull);
+  test('[GET BY ID] must return a MoisesJobModel', () async {
+    when(
+      mockConnect.get(any),
+    ).thenAnswer((_) async {
+      return Response(data: mockJson, requestOptions: RequestOptions());
     });
 
-    test('[GET] - must return a List<MoisesJobModel>', () async {
-      const MoisesJobFilterModel statusFilter = MoisesJobFilterModel(
-        status: MoisesJobStatusEnum.succeeded,
-      );
+    var result = await job.get(mockId);
 
-      when(
-        mockConnect.get(any, queryParameters: statusFilter.toJson()),
-      ).thenAnswer((_) async {
-        return Response(data: [mockJson, mockJson], requestOptions: RequestOptions());
-      });
+    expect(result, isA<MoisesJobModel>());
+    expect(result, isNotNull);
+  });
 
-      var result = await job.getAll(statusFilter);
+  test('[GET] - must return a List<MoisesJobModel>', () async {
+    const MoisesJobFilterModel statusFilter = MoisesJobFilterModel(
+      status: MoisesJobStatusEnum.succeeded,
+    );
 
-      expect(result, isA<List<MoisesJobModel>>());
-      expect(result, isNotNull);
+    when(
+      mockConnect.get(any, queryParameters: statusFilter.toJson()),
+    ).thenAnswer((_) async {
+      return Response(data: [mockJson, mockJson], requestOptions: RequestOptions());
     });
 
-    test('[POST] - must create a MoisesJobModel and return MoisesNewJobResultModel', () async {
-      clearInteractions(mockConnect);
+    var result = await job.getAll(statusFilter);
 
-      const params = MoisesNewJobParamsModel(inputUrl: 'https://your-server.com/some-audio.m4a');
-      const model = MoisesNewJobModel(name: 'My job 123', workflow: 'my-workflow-id', params: params);
-      const json = {
-        'jobId': '00000000-0000-0000-0000-000000000000',
-        'id': '00000000-0000-0000-0000-000000000000',
-      };
+    expect(result, isA<List<MoisesJobModel>>());
+    expect(result, isNotNull);
+  });
 
-      when(
-        mockConnect.post(
-          any,
-          headers: {'Content-Type': 'application/json'},
-          data: model.toJson(),
-        ),
-      ).thenAnswer((_) async {
-        return Response(data: json, requestOptions: RequestOptions());
-      });
+  test('[POST] - must create a MoisesJobModel and return MoisesNewJobResultModel', () async {
+    clearInteractions(mockConnect);
 
-      var result = await job.create(model);
+    const params = MoisesNewJobParamsModel(inputUrl: 'https://your-server.com/some-audio.m4a');
+    const model = MoisesNewJobModel(name: 'My job 123', workflow: 'my-workflow-id', params: params);
+    const json = {
+      'jobId': '00000000-0000-0000-0000-000000000000',
+      'id': '00000000-0000-0000-0000-000000000000',
+    };
 
-      expect(result, isA<MoisesNewJobResultModel>());
-      expect(result, isNotNull);
+    when(
+      mockConnect.post(
+        any,
+        headers: {'Content-Type': 'application/json'},
+        data: model.toJson(),
+      ),
+    ).thenAnswer((_) async {
+      return Response(data: json, requestOptions: RequestOptions());
     });
 
-    test('[DELETE] - must delete a MoisesJobModel', () async {
-      clearInteractions(mockConnect);
+    var result = await job.create(model);
 
-      when(
-        mockConnect.delete(any),
-      ).thenAnswer((_) async {
-        return Response(requestOptions: RequestOptions());
-      });
+    expect(result, isA<MoisesNewJobResultModel>());
+    expect(result, isNotNull);
+  });
 
-      await job.delete(mockId);
+  test('[DELETE] - must delete a MoisesJobModel', () async {
+    clearInteractions(mockConnect);
 
-      verify(mockConnect.delete(any)).called(1);
+    when(
+      mockConnect.delete(any),
+    ).thenAnswer((_) async {
+      return Response(requestOptions: RequestOptions());
     });
+
+    await job.delete(mockId);
+
+    verify(mockConnect.delete(any)).called(1);
   });
 }

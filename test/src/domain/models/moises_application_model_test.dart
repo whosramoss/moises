@@ -12,11 +12,9 @@ void main() {
     'name': 'Default Application',
   };
 
-  group('[Model][MoisesApplicationModel]', () {
-    test('must convert from json to model', () async {
-      var v = MoisesApplicationModel.fromJson(json);
-      expect(v, isA<MoisesApplicationModel>());
-      expect(v, equals(model));
-    });
+  test('must convert from json to model', () async {
+    var v = MoisesApplicationModel.fromJson(json);
+    expect(v, isA<MoisesApplicationModel>());
+    expect(v, equals(model));
   });
 }

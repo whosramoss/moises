@@ -12,11 +12,9 @@ void main() {
     'id': '00000000-0000-0000-0000-000000000000',
   };
 
-  group('[Model][MoisesNewJobResultModel]', () {
-    test('must convert from json to model', () async {
-      var v = MoisesNewJobResultModel.fromJson(json);
-      expect(v, isA<MoisesNewJobResultModel>());
-      expect(v, equals(model));
-    });
+  test('must convert from json to model', () async {
+    var v = MoisesNewJobResultModel.fromJson(json);
+    expect(v, isA<MoisesNewJobResultModel>());
+    expect(v, equals(model));
   });
 }
