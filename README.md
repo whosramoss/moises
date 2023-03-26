@@ -1,11 +1,24 @@
 
 
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/whosramoss/moises/main/resources/images/banner.png"/><br/><br/>
+  <img src="https://raw.githubusercontent.com/whosramoss/moises/main/resources/images/banner.png"/>
+  <br/><br/>
   Moises REST API client for Dart
+  <div align="center">
+  <a href="https://pub.dev/packages/moises">
+    <img src="https://img.shields.io/pub/v/moises.svg" alt="pub">
+  </a>
+  <a href="https://github.com/whosramoss/moises/actions?query=workflow%3ABuild">
+    <img src="https://github.com/whosramoss/moises/workflows/Build/badge.svg" alt="Build Status">
+  </a>
+  <!-- <a href="https://github.com/whosramoss/moises/actions">
+    <img src="https://codecov.io/gh/whosramoss/moises/branch/master/graph/badge.svg" alt="Codecov">
+  </a> -->
+  <br>
+</div>
+
 </h1>
 
-# Getting Started
 
 In order to use the API, you need to have an API key. You can get one [**here**](https://developer.moises.ai/) and once you have it, you can use it in the client passing the key itself in the `Moises` constructor.
 
