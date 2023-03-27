@@ -1,0 +1,4 @@
+comment: true
+ignore:
+  - '**/example/'
+  - '**/*.g.dart'

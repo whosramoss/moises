@@ -17,7 +17,8 @@ class MoisesKey {
       final String localFileName = fileName ?? '.env.json';
       final File file = File(localFileName);
       final String content = await file.readAsString();
-      final Map<String, dynamic> json = jsonDecode(content) as Map<String, dynamic>;
+      final Map<String, dynamic> json =
+          jsonDecode(content) as Map<String, dynamic>;
       final bool hasKey = json.keys.contains(key);
       if (!hasKey) return '';
       return json[key] as String;

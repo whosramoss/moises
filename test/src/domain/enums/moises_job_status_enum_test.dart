@@ -10,13 +10,11 @@ void main() {
   });
 
   test('must test if passing String parameter returns an Enum', () {
-    final List<String> lst = MoisesJobStatusEnum.values.map((e) => e.status).toList();
-
-    lst.map(
-      (e) => expect(
-        MoisesJobStatusEnum.getEnumByString(e),
+    MoisesJobStatusEnum.values.map((e) => e.status).map((status) {
+      expect(
+        MoisesJobStatusEnum.getEnumByString(status),
         isA<MoisesJobStatusEnum>(),
-      ),
-    );
+      );
+    });
   });
 }

@@ -25,7 +25,8 @@ class MoisesWorkflowParamsModel extends Equatable {
   String toJsonString() => jsonEncode(toJson());
 
   /// Parses the Map and returns the resulting object as [MoisesWorkflowParamsModel].
-  factory MoisesWorkflowParamsModel.fromJson(Map<String, dynamic> json) => _$MoisesWorkflowParamsModelFromJson(json);
+  factory MoisesWorkflowParamsModel.fromJson(Map<String, dynamic> json) =>
+      _$MoisesWorkflowParamsModelFromJson(json);
 
   /// Converts [MoisesWorkflowParamsModel] to a JSON.
   Map<String, dynamic> toJson() => _$MoisesWorkflowParamsModelToJson(this);

@@ -2,7 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:moises/moises.dart';
 
 void main() {
-  var model = const MoisesWorkflowParamsModel(inputUrl: 'https://www.dropbox.com/');
+  var model = const MoisesWorkflowParamsModel(
+    inputUrl: 'https://www.dropbox.com/',
+  );
 
   const json = {'inputUrl': 'https://www.dropbox.com/'};
 

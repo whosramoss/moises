@@ -70,7 +70,10 @@ void main() {
     when(
       mockConnect.get(any, queryParameters: statusFilter.toJson()),
     ).thenAnswer((_) async {
-      return Response(data: [mockJson, mockJson], requestOptions: RequestOptions());
+      return Response(
+        data: [mockJson, mockJson],
+        requestOptions: RequestOptions(),
+      );
     });
 
     var result = await job.getAll(statusFilter);
@@ -82,8 +85,16 @@ void main() {
   test('[POST] - must create a MoisesJobModel and return MoisesNewJobResultModel', () async {
     clearInteractions(mockConnect);
 
-    const params = MoisesNewJobParamsModel(inputUrl: 'https://your-server.com/some-audio.m4a');
-    const model = MoisesNewJobModel(name: 'My job 123', workflow: 'my-workflow-id', params: params);
+    const params = MoisesNewJobParamsModel(
+      inputUrl: 'https://your-server.com/some-audio.m4a',
+    );
+
+    const model = MoisesNewJobModel(
+      name: 'My job 123',
+      workflow: 'my-workflow-id',
+      params: params,
+    );
+
     const json = {
       'jobId': '00000000-0000-0000-0000-000000000000',
       'id': '00000000-0000-0000-0000-000000000000',

@@ -27,7 +27,8 @@ class MoisesNewJobResultModel extends Equatable {
   String toJsonString() => jsonEncode(toJson());
 
   /// Parses the Map and returns the resulting object as [MoisesNewJobResultModel].
-  factory MoisesNewJobResultModel.fromJson(Map<String, dynamic> json) => _$MoisesNewJobResultModelFromJson(json);
+  factory MoisesNewJobResultModel.fromJson(Map<String, dynamic> json) =>
+      _$MoisesNewJobResultModelFromJson(json);
 
   /// Converts [MoisesNewJobResultModel] to a JSON.
   Map<String, dynamic> toJson() => _$MoisesNewJobResultModelToJson(this);

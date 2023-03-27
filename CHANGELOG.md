@@ -11,3 +11,7 @@
 | Create a new Job        	| `POST`   	| `/api/job/`        	|
 | Delete a Job by id      	| `DELETE` 	| `/api/job/:id`     	|
 
+# 1.0.1
+
+- Add `Codecov` integration tests
+- Format files

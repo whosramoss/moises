@@ -51,7 +51,8 @@ class MoisesError extends Equatable {
   String toJsonString() => jsonEncode(toJson());
 
   /// Parses the Map and returns the resulting object as [MoisesError].
-  factory MoisesError.fromJson(Map<String, dynamic> json) => _$MoisesErrorFromJson(json);
+  factory MoisesError.fromJson(Map<String, dynamic> json) =>
+      _$MoisesErrorFromJson(json);
 
   /// Converts [MoisesError] to a JSON.
   Map<String, dynamic> toJson() => _$MoisesErrorToJson(this);
