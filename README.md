@@ -5,18 +5,17 @@
   <br/><br/>
   Moises REST API client for Dart
   <div align="center">
-  <a href="https://pub.dev/packages/moises">
-    <img src="https://img.shields.io/pub/v/moises.svg" alt="pub">
-  </a>
-  <a href="https://github.com/whosramoss/moises/actions?query=workflow%3ABuild">
-    <img src="https://github.com/whosramoss/moises/workflows/Build/badge.svg" alt="Build Status">
-  </a>
-  <a href="https://github.com/whosramoss/moises/actions">
-    <img src="https://codecov.io/gh/whosramoss/moises/branch/main/graph/badge.svg" alt="Codecov">
-  </a>
-  <br>
-</div>
-
+    <a href="https://pub.dev/packages/moises">
+      <img src="https://img.shields.io/pub/v/moises.svg" alt="pub">
+    </a>
+    <a href="https://github.com/whosramoss/moises/actions?query=workflow%3ABuild">
+      <img src="https://github.com/whosramoss/moises/workflows/Build/badge.svg" alt="Build Status">
+    </a>
+    <a href="https://codecov.io/gh/whosramoss/moises" >
+      <img src="https://codecov.io/gh/whosramoss/moises/branch/main/graph/badge.svg?token=CE8QMVF7XY"/>
+    </a>
+    <br>
+  </div>
 </h1>
 
 
