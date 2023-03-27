@@ -10,7 +10,10 @@ class MoisesException implements Exception {
   final dynamic error;
 
   /// The instance of the `MoisesException` class.
-  MoisesException({this.stackTrace, required this.error});
+  const MoisesException({
+    this.stackTrace,
+    required this.error,
+  });
 
   /// Adapts the error based on the type
   factory MoisesException.onError(StackTrace? stackTrace, dynamic error) {

@@ -9,7 +9,7 @@ part of 'moises_job_filter_model.dart';
 MoisesJobFilterModel _$MoisesJobFilterModelFromJson(
         Map<String, dynamic> json) =>
     MoisesJobFilterModel(
-      status: $enumDecodeNullable(_$MoisesJobStatusEnumEnumMap, json['status']),
+      status: MoisesJobFilterModel.fromStatus(json['status'] as String?),
       workflow: json['workflow'] as String?,
     );
 
@@ -27,11 +27,3 @@ Map<String, dynamic> _$MoisesJobFilterModelToJson(
   writeNotNull('workflow', instance.workflow);
   return val;
 }
-
-const _$MoisesJobStatusEnumEnumMap = {
-  MoisesJobStatusEnum.queued: 'queued',
-  MoisesJobStatusEnum.started: 'started',
-  MoisesJobStatusEnum.succeeded: 'succeeded',
-  MoisesJobStatusEnum.failed: 'failed',
-  MoisesJobStatusEnum.none: 'none',
-};
