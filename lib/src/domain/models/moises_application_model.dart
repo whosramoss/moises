@@ -16,7 +16,10 @@ class MoisesApplicationModel extends Equatable {
   final String name;
 
   /// Instance of [MoisesApplicationModel].
-  const MoisesApplicationModel({required this.id, required this.name});
+  const MoisesApplicationModel({
+    required this.id,
+    required this.name,
+  });
 
   /// Parses the Json String and returns the resulting object as [MoisesApplicationModel].
   factory MoisesApplicationModel.fromString(String json) {

@@ -10,14 +10,17 @@ part 'moises_job_filter_model.g.dart';
 @JsonSerializable(includeIfNull: false, explicitToJson: true)
 class MoisesJobFilterModel extends Equatable {
   /// The Filter Status
-  @JsonKey(toJson: toStatus)
+  @JsonKey(toJson: toStatus, fromJson: fromStatus)
   final MoisesJobStatusEnum? status;
 
   /// The Filter Workflow
   final String? workflow;
 
   /// Instance of [MoisesJobFilterModel].
-  const MoisesJobFilterModel({this.status, this.workflow});
+  const MoisesJobFilterModel({
+    this.status,
+    this.workflow,
+  });
 
   /// Parses the Json String and returns the resulting object as [MoisesJobFilterModel].
   factory MoisesJobFilterModel.fromString(String json) {
@@ -26,6 +29,9 @@ class MoisesJobFilterModel extends Equatable {
 
   /// Get Status param inside [MoisesJobStatusEnum]
   static toStatus(MoisesJobStatusEnum? v) => v?.status;
+
+  /// Get String value param
+  static fromStatus(String? v) => v != null ? MoisesJobStatusEnum.getEnumByString(v) : null;
 
   /// Converts [MoisesJobFilterModel] to a JSON string.
   String toJsonString() => jsonEncode(toJson());

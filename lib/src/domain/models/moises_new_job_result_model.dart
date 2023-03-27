@@ -16,7 +16,10 @@ class MoisesNewJobResultModel extends Equatable {
   final String jobId;
 
   /// Instance of [MoisesNewJobResultModel].
-  const MoisesNewJobResultModel({required this.id, required this.jobId});
+  const MoisesNewJobResultModel({
+    required this.id,
+    required this.jobId,
+  });
 
   /// Parses the Json String and returns the resulting object as [MoisesNewJobResultModel].
   factory MoisesNewJobResultModel.fromString(String json) {
