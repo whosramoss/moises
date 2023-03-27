@@ -6,6 +6,12 @@ void main() {
     MoisesWorkflowEnum.values.map((e) => expect(e.id, isA<String>()));
   });
 
+  test('must test if all has 9 types of MoisesWorkflowEnum', () {
+    final total = MoisesWorkflowEnum.values.length;
+    expect(total, isA<int>());
+    expect(total, equals(9));
+  });
+
   test('must test if all ids parameters have the moises keyword', () {
     MoisesWorkflowEnum.values.map((e) {
       final v = e.id.contains('moises');
