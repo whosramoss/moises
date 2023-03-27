@@ -12,7 +12,9 @@ class MoisesNewJobParamsModel extends Equatable {
   final String inputUrl;
 
   /// Instance of [MoisesNewJobParamsModel].
-  const MoisesNewJobParamsModel({required this.inputUrl});
+  const MoisesNewJobParamsModel({
+    required this.inputUrl,
+  });
 
   /// Parses the Json String and returns the resulting object as [MoisesNewJobParamsModel].
   factory MoisesNewJobParamsModel.fromString(String json) {
@@ -23,8 +25,7 @@ class MoisesNewJobParamsModel extends Equatable {
   String toJsonString() => jsonEncode(toJson());
 
   /// Parses the Map and returns the resulting object as [MoisesNewJobParamsModel].
-  factory MoisesNewJobParamsModel.fromJson(Map<String, dynamic> json) =>
-      _$MoisesNewJobParamsModelFromJson(json);
+  factory MoisesNewJobParamsModel.fromJson(Map<String, dynamic> json) => _$MoisesNewJobParamsModelFromJson(json);
 
   /// Converts [MoisesNewJobParamsModel] to a JSON.
   Map<String, dynamic> toJson() => _$MoisesNewJobParamsModelToJson(this);
