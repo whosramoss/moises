@@ -1,5 +1,5 @@
 /// # MoisesJobStatusEnum
-/// The Job Status class, Check for more info : [docs/reference](https://developer.moises.ai/docs/reference)
+/// The Job Status class, Check for more info : [docs/reference](https://music.ai/docs/api/reference/)
 enum MoisesJobStatusEnum {
   /// Queued Status - Awaiting to start
   queued('QUEUED'),

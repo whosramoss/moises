@@ -18,8 +18,7 @@
   </div>
 </h1>
 
-
-In order to use the API, you need to have an API key. You can get one [**here**](https://developer.moises.ai/) and once you have it, you can use it in the client passing the key itself in the `Moises` constructor.
+To use the API, you’ll need an API key. Simply [**creating an account**](https://music.ai/dash/) to obtain one. Once you have the key, you can use it by passing it into the `Moises` constructor in the client
 
 ```dart
 // Create a new client
@@ -43,7 +42,7 @@ Future<void> getApplication() async {
 
 This client uses JSON serializers by [json_serializable](https://pub.dev/packages/json_serializable). Run `pub run build_runner watch` to continuously rebuild serializers in the background when files are updated.
 
-The full API documentation is available in [**here**](https://developer.moises.ai/docs). 
+The full API documentation is available in [**here**](https://music.ai/docs/getting-started/introduction/). 
 
 # Contributing
 
