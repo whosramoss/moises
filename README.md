@@ -18,8 +18,7 @@
   </div>
 </h1>
 
-
-To use the API, you need to have an API key. You can get one by [**creating an account**](https://music.ai/dash/), once you have it, you can use it in the client by passing the key itself in the `Moises` constructor.
+To use the API, you’ll need an API key. Simply [**creating an account**](https://music.ai/dash/) to obtain one. Once you have the key, you can use it by passing it into the `Moises` constructor in the client
 
 ```dart
 // Create a new client
