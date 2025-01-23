@@ -1,5 +1,5 @@
 /// ## Supported Media Formats (Input Codec's)
-/// Check for more info : [docs/media-formats](https://developer.moises.ai/docs/media-formats)
+/// Check for more info : [docs/media-formats](https://music.ai/docs/api/file-formats/)
 enum MediaInputCodecEnum {
   /// # Codec AAC
   /// - **Description** : `Advanced Audio Coding`

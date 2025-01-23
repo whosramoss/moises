@@ -2,7 +2,7 @@
 /// The following workflows are available to all platform users.
 /// Public workflows are under the `moises` namespace.
 ///
-/// Check for more info : [docs/template-workflows](https://developer.moises.ai/docs/template-workflows)
+/// Check for more info : [docs/template-workflows](https://music.ai/workflows/)
 enum MoisesWorkflowEnum {
   /// ## Stems Vocals Accompaniment
   ///
