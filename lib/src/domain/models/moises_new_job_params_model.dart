@@ -5,6 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'moises_new_job_params_model.g.dart';
 
 /// The [MoisesNewJobParamsModel] class.
+@Deprecated('Use Map<String, dynamic>')
 @JsonSerializable(explicitToJson: true)
 class MoisesNewJobParamsModel extends Equatable {
   /// The Input Url value
@@ -25,7 +26,8 @@ class MoisesNewJobParamsModel extends Equatable {
   String toJsonString() => jsonEncode(toJson());
 
   /// Parses the Map and returns the resulting object as [MoisesNewJobParamsModel].
-  factory MoisesNewJobParamsModel.fromJson(Map<String, dynamic> json) => _$MoisesNewJobParamsModelFromJson(json);
+  factory MoisesNewJobParamsModel.fromJson(Map<String, dynamic> json) =>
+      _$MoisesNewJobParamsModelFromJson(json);
 
   /// Converts [MoisesNewJobParamsModel] to a JSON.
   Map<String, dynamic> toJson() => _$MoisesNewJobParamsModelToJson(this);
