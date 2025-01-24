@@ -17,6 +17,10 @@ Future<void> main() async {
   /// Get All Jobs
   const MoisesJobFilterModel filter = MoisesJobFilterModel(
     status: MoisesJobStatusEnum.succeeded,
+    workflow: 'workflow-name',
+    batchName: 'batch-name',
+    page: 0,
+    size: 20,
   );
   await getAllJobs(moises, filter);
 

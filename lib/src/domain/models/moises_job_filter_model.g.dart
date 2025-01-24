@@ -11,6 +11,9 @@ MoisesJobFilterModel _$MoisesJobFilterModelFromJson(
     MoisesJobFilterModel(
       status: MoisesJobFilterModel.fromStatus(json['status'] as String?),
       workflow: json['workflow'] as String?,
+      batchName: json['batchName'] as String?,
+      page: json['page'] as int?,
+      size: json['size'] as int?,
     );
 
 Map<String, dynamic> _$MoisesJobFilterModelToJson(
@@ -25,5 +28,8 @@ Map<String, dynamic> _$MoisesJobFilterModelToJson(
 
   writeNotNull('status', MoisesJobFilterModel.toStatus(instance.status));
   writeNotNull('workflow', instance.workflow);
+  writeNotNull('batchName', instance.batchName);
+  writeNotNull('size', instance.size);
+  writeNotNull('page', instance.page);
   return val;
 }

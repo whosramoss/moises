@@ -2,14 +2,24 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:moises/moises.dart';
 
 void main() {
-  final model = MoisesJobFilterModel(
+  const model = MoisesJobFilterModel(
     status: MoisesJobStatusEnum.succeeded,
-    workflow: MoisesWorkflowEnum.stemsVocalsAccompaniment.id,
+    workflow: 'workflow-name',
+    batchName: 'batch-name',
+    page: 0,
+    size: 20,
   );
 
-  const json = {'status': 'SUCCEEDED', 'workflow': 'moises/stems-vocals-accompaniment'};
+  const json = {
+    'status': 'SUCCEEDED',
+    'workflow': 'workflow-name',
+    'batchName': 'batch-name',
+    'page': 0,
+    'size': 20,
+  };
 
-  const jsonString = '{"status":"SUCCEEDED","workflow":"moises/stems-vocals-accompaniment"}';
+  const jsonString =
+      '{"status":"SUCCEEDED","workflow":"workflow-name","batchName":"batch-name","size":20,"page":0}';
 
   test('must convert from json to model', () async {
     final v = MoisesJobFilterModel.fromJson(json);
