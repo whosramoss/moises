@@ -1,8 +1,6 @@
-/// # Moises Template workflows
-/// The following workflows are available to all platform users.
-/// Public workflows are under the `moises` namespace.
-///
-/// Check for more info : [docs/template-workflows](https://music.ai/workflows/)
+/// # Deprecated - Moises Template workflows
+@Deprecated(
+    'Use the workflow name - Check for more info : https://music.ai/workflows/')
 enum MoisesWorkflowEnum {
   /// ## Stems Vocals Accompaniment
   ///
