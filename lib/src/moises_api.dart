@@ -2,6 +2,8 @@ import 'package:moises/src/endpoints/application/i_moises_application.dart';
 import 'package:moises/src/endpoints/application/moises_application.dart';
 import 'package:moises/src/endpoints/job/i_moises_job.dart';
 import 'package:moises/src/endpoints/job/moises_job.dart';
+import 'package:moises/src/endpoints/workflow/i_moises_workflow.dart';
+import 'package:moises/src/endpoints/workflow/moises_workflow.dart';
 import 'package:moises/src/infrastructure/connect/moises_connect.dart';
 
 /// The `Moises` class.
@@ -29,4 +31,7 @@ class MoisesApiClient {
 
   /// Getter method to fetch `Job` requests
   IMoisesJob get job => MoisesJob(_connect);
+
+  /// Getter method to fetch `WorkFlow` requests
+  IMoisesWorkFlow get workflow => MoisesWorkFlow(_connect);
 }
