@@ -6,8 +6,8 @@ class MoisesException implements Exception {
   /// The `StackTrace` parameter.
   final StackTrace? stackTrace;
 
-  /// The `error` parameter
-  final dynamic error;
+  /// The `MoisesError` parameter
+  final MoisesError error;
 
   /// The instance of the `MoisesException` class.
   const MoisesException({
@@ -18,13 +18,22 @@ class MoisesException implements Exception {
   /// Adapts the error based on the type
   factory MoisesException.onError(StackTrace? stackTrace, dynamic error) {
     if (error is Map<String, dynamic>) {
-      error = MoisesError.fromJson(error);
+      return MoisesException(
+        stackTrace: stackTrace,
+        error: MoisesError.fromJson(error),
+      );
     }
 
-    if (error is DioError) {
-      error = MoisesError.fromDioError(error);
+    if (error is DioException) {
+      return MoisesException(
+        stackTrace: stackTrace,
+        error: MoisesError.fromDioException(error),
+      );
     }
 
-    return MoisesException(stackTrace: stackTrace, error: error);
+    return MoisesException(
+      stackTrace: stackTrace,
+      error: MoisesError.notFound(),
+    );
   }
 }
