@@ -29,7 +29,7 @@ void main() {
     expect(application, isA<MoisesApplication>());
   });
 
-  test('[GET] - must return a MosesApplicationModel', () async {
+  test('[GET] - must return a MoisesApplicationModel', () async {
     when(
       mockConnect.get(any),
     ).thenAnswer((_) async {
