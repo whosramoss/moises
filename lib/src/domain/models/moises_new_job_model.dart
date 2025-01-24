@@ -18,7 +18,7 @@ class MoisesNewJobModel extends Equatable {
   final String workflow;
 
   /// The New Job params
-  final MoisesNewJobParamsModel params;
+  final Map<String, dynamic> params;
 
   /// Instance of [MoisesNewJobModel].
   const MoisesNewJobModel({

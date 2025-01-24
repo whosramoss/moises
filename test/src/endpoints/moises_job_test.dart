@@ -82,17 +82,17 @@ void main() {
     expect(result, isNotNull);
   });
 
-  test('[POST] - must create a MoisesJobModel and return MoisesNewJobResultModel', () async {
+  test(
+      '[POST] - must create a MoisesJobModel and return MoisesNewJobResultModel',
+      () async {
     clearInteractions(mockConnect);
-
-    const params = MoisesNewJobParamsModel(
-      inputUrl: 'https://your-server.com/some-audio.m4a',
-    );
 
     const model = MoisesNewJobModel(
       name: 'My job 123',
       workflow: 'my-workflow-id',
-      params: params,
+      params: {
+        'inputUrl': 'https://your-server.com/some-audio.m4a',
+      },
     );
 
     const json = {

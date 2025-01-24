@@ -31,9 +31,9 @@ Future<void> main() async {
   const newJob = MoisesNewJobModel(
     name: 'JOB NAME',
     workflow: 'my-workflow-id',
-    params: MoisesNewJobParamsModel(
-      inputUrl: 'https://your-server.com/some-audio.m4a',
-    ),
+    params: {
+      'inputUrl': 'https://your-server.com/some-audio.m4a',
+    },
   );
 
   await createJob(moises, newJob);
