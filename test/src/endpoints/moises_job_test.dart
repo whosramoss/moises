@@ -33,6 +33,9 @@ void main() {
     'workflowParams': {
       'inputUrl': 'https://www.dropbox.com/',
     },
+    'metadata': {
+      'key': 'value',
+    },
     'name': 'Try Orchestrator workflow',
     'createdAt': '2023-01-01T01:01:11.600Z',
     'startedAt': '2023-01-01T01:01:11.600Z',
