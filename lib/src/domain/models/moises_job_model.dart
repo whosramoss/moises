@@ -46,6 +46,9 @@ class MoisesJobModel extends Equatable {
   /// The Job result
   final Map<dynamic, dynamic> result;
 
+  /// The Job metadata
+  final Map<dynamic, dynamic> metadata;
+
   /// The Job workflowParams
   final MoisesWorkflowParamsModel workflowParams;
 
@@ -61,6 +64,7 @@ class MoisesJobModel extends Equatable {
     required this.completedAt,
     required this.batchName,
     required this.result,
+    required this.metadata,
     required this.workflowParams,
   });
 
@@ -90,6 +94,7 @@ class MoisesJobModel extends Equatable {
         completedAt,
         batchName,
         result,
+        metadata,
         workflowParams,
       ];
 }
