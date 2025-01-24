@@ -8,6 +8,9 @@ void main() {
     params: {
       'inputUrl': 'https://your-server.com/some-audio.m4a',
     },
+    metadata: {
+      'key': 'value',
+    },
   );
 
   const json = {
@@ -15,11 +18,14 @@ void main() {
     'workflow': 'my-workflow-id',
     'params': {
       'inputUrl': 'https://your-server.com/some-audio.m4a',
-    }
+    },
+    'metadata': {
+      'key': 'value',
+    },
   };
 
   const jsonString =
-      '{"name":"My job 123","workflow":"my-workflow-id","params":{"inputUrl":"https://your-server.com/some-audio.m4a"}}';
+      '{"name":"My job 123","workflow":"my-workflow-id","params":{"inputUrl":"https://your-server.com/some-audio.m4a"},"metadata":{"key":"value"}}';
 
   test('must convert from json to model', () async {
     final v = MoisesNewJobModel.fromJson(json);

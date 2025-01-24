@@ -6,7 +6,6 @@ import 'package:moises/src/domain/enums/moises_job_status_enum.dart';
 import 'package:moises/src/domain/models/moises_job_filter_model.dart';
 import 'package:moises/src/domain/models/moises_job_model.dart';
 import 'package:moises/src/domain/models/moises_new_job_model.dart';
-import 'package:moises/src/domain/models/moises_new_job_params_model.dart';
 import 'package:moises/src/domain/models/moises_new_job_result_model.dart';
 import 'package:moises/src/endpoints/job/i_moises_job.dart';
 import 'package:moises/src/endpoints/job/moises_job.dart';
