@@ -13,6 +13,9 @@ Future<void> main() async {
   /// Application
   await getApplication(moises);
 
+  /// Upload
+  await getUpload(moises);
+
   /// Workflow
   await getWorkflowList(moises);
 
@@ -27,6 +30,15 @@ Future<void> getApplication(Moises moises) async {
   try {
     final MoisesApplicationModel value = await moises.application.get();
     print('Application : ${value.toJson()}');
+  } on MoisesException catch (e) {
+    print('Error : ${e.error}');
+  }
+}
+
+Future<void> getUpload(Moises moises) async {
+  try {
+    final MoisesUploadModel value = await moises.upload.get();
+    print('Upload : ${value.toJson()}');
   } on MoisesException catch (e) {
     print('Error : ${e.error}');
   }
