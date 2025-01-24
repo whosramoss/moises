@@ -14,6 +14,9 @@ Future<void> main() async {
   /// Get Application
   await getApplication(moises);
 
+  /// Workflow
+  await getWorkflowList(moises);
+
   /// Get All Jobs
   const MoisesJobFilterModel filter = MoisesJobFilterModel(
     status: MoisesJobStatusEnum.succeeded,
@@ -49,6 +52,20 @@ Future<void> getApplication(Moises moises) async {
     log('Application : $value');
   } on MoisesException catch (e) {
     log('Error : ${e.error}');
+  }
+}
+
+Future<void> getWorkflowList(Moises moises) async {
+  try {
+    final List<MoisesWorkflowModel> value = await moises.workflow.getAll(
+      const MoisesWorkflowFilterModel(
+        page: 0,
+        size: 20,
+      ),
+    );
+    print('Workflow List (${value.length}) : $value');
+  } on MoisesException catch (e) {
+    print('Error : ${e.error}');
   }
 }
 
