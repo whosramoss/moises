@@ -20,6 +20,7 @@ export 'src/domain/models/moises_new_job_result_model.dart';
 export 'src/domain/models/moises_workflow_params_model.dart';
 export 'src/domain/models/moises_workflow_filter_model.dart';
 export 'src/domain/models/moises_workflow_model.dart';
+export 'src/domain/models/moises_upload_model.dart';
 
 /// enums
 ///
