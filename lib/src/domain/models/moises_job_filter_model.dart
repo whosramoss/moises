@@ -16,10 +16,22 @@ class MoisesJobFilterModel extends Equatable {
   /// The Filter Workflow
   final String? workflow;
 
+  /// The Filter BatchName
+  final String? batchName;
+
+  /// The Filter Size
+  final int? size;
+
+  /// The Filter Page
+  final int? page;
+
   /// Instance of [MoisesJobFilterModel].
   const MoisesJobFilterModel({
     this.status,
     this.workflow,
+    this.batchName,
+    this.page,
+    this.size,
   });
 
   /// Parses the Json String and returns the resulting object as [MoisesJobFilterModel].
@@ -31,17 +43,19 @@ class MoisesJobFilterModel extends Equatable {
   static toStatus(MoisesJobStatusEnum? v) => v?.status;
 
   /// Get String value param
-  static fromStatus(String? v) => v != null ? MoisesJobStatusEnum.getEnumByString(v) : null;
+  static fromStatus(String? v) =>
+      v != null ? MoisesJobStatusEnum.getEnumByString(v) : null;
 
   /// Converts [MoisesJobFilterModel] to a JSON string.
   String toJsonString() => jsonEncode(toJson());
 
   /// Parses the Map and returns the resulting object as [MoisesJobFilterModel].
-  factory MoisesJobFilterModel.fromJson(Map<String, dynamic> json) => _$MoisesJobFilterModelFromJson(json);
+  factory MoisesJobFilterModel.fromJson(Map<String, dynamic> json) =>
+      _$MoisesJobFilterModelFromJson(json);
 
   /// Converts [MoisesJobFilterModel] to a JSON.
   Map<String, dynamic> toJson() => _$MoisesJobFilterModelToJson(this);
 
   @override
-  List<Object?> get props => [status, workflow];
+  List<Object?> get props => [status, workflow, batchName, page, size];
 }
