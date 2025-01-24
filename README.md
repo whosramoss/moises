@@ -18,31 +18,35 @@
   </div>
 </h1>
 
-To use the API, you’ll need an API key. Simply [**creating an account**](https://music.ai/dash/) to obtain one. Once you have the key, you can use it by passing it into the `Moises` constructor in the client
+# Overview 
+To get started, create an account [here](https://music.ai/dash/) to obtain your API key. After obtaining the key, you can use it by passing it into the `Moises` constructor within your client. The example below demonstrates how to fetch the `MoisesApplicationModel`.
 
 ```dart
-// Create a new client
-final Moises moises = Moises('Your API key');
-```
-# Examples
-The example below is for fetching the `MoisesApplicationModel`. You can find other examples inside the `example/main.dart` file.
-
-```dart
-// Get Application Result
 Future<void> getApplication() async {
   try {
+    // Create a new Moises client with your API key
     final Moises moises = Moises('Your API key');
+
+    // Fetch the application data
     final MoisesApplicationModel value = await moises.application.get();
-    print('Application : $value');
+
+    return value;
   } on MoisesException catch (error) {
-    print('Error : $error');
+    print('Error: $error');
   }
 }
 ```
+You can find additional examples [here](https://github.com/whosramoss/moises/blob/main/example/main.dart). To run them, execute `dart run example/main.dart` for more demonstration code.
 
-This client uses JSON serializers by [json_serializable](https://pub.dev/packages/json_serializable). Run `pub run build_runner watch` to continuously rebuild serializers in the background when files are updated.
+# Working with JSON Serializers
 
-The full API documentation is available in [**here**](https://music.ai/docs/getting-started/introduction/). 
+This client utilizes JSON serialization through the [json_serializable](https://pub.dev/packages/json_serializable) package. To continuously rebuild the serializers in the background when files are updated, run the following command:
+
+```bash
+flutter pub run build_runner watch --delete-conflicting-outputs
+```
+# Full API Documentation
+For complete API documentation, refer to the official guide [here](https://music.ai/docs/getting-started/introduction/).
 
 # Contributing
 

@@ -1,57 +1,34 @@
-import 'dart:developer';
 import 'package:moises/moises.dart';
 
 import 'moises_key.dart';
 
 Future<void> main() async {
   /// Searching for local keys
-  String key = await MoisesKey.get();
+  final String key = await MoisesKey.get();
   if (key.isEmpty) return;
 
   /// Create a new client
   final Moises moises = Moises(key);
 
-  /// Get Application
+  /// Application
   await getApplication(moises);
 
   /// Workflow
   await getWorkflowList(moises);
 
-  /// Get All Jobs
-  const MoisesJobFilterModel filter = MoisesJobFilterModel(
-    status: MoisesJobStatusEnum.succeeded,
-    workflow: 'workflow-name',
-    batchName: 'batch-name',
-    page: 0,
-    size: 20,
-  );
-  await getAllJobs(moises, filter);
-
-  /// Get Job
-  const String jobId = '00000000-0000-0000-0000-000000000000';
-  await getJobById(moises, jobId);
-
-  /// Delete a Job
-  await deleteJob(moises, jobId);
-
-  /// Create a Job
-  const newJob = MoisesNewJobModel(
-    name: 'JOB NAME',
-    workflow: 'my-workflow-id',
-    params: {
-      'inputUrl': 'https://your-server.com/some-audio.m4a',
-    },
-  );
-
-  await createJob(moises, newJob);
+  /// Jobs
+  await getJobsList(moises);
+  await getJob(moises);
+  await deleteJob(moises);
+  await createJob(moises);
 }
 
 Future<void> getApplication(Moises moises) async {
   try {
     final MoisesApplicationModel value = await moises.application.get();
-    log('Application : $value');
+    print('Application : ${value.toJson()}');
   } on MoisesException catch (e) {
-    log('Error : ${e.error}');
+    print('Error : ${e.error}');
   }
 }
 
@@ -69,38 +46,56 @@ Future<void> getWorkflowList(Moises moises) async {
   }
 }
 
-Future<void> getAllJobs(Moises moises, MoisesJobFilterModel filter) async {
+Future<void> getJobsList(Moises moises) async {
   try {
-    final List<MoisesJobModel> value = await moises.job.getAll(filter);
-    log('Job List (${value.length}) : $value');
+    final List<MoisesJobModel> value = await moises.job.getAll(
+      const MoisesJobFilterModel(
+        status: MoisesJobStatusEnum.succeeded,
+        workflow: 'workflow-name',
+        batchName: 'batch-name',
+        page: 0,
+        size: 20,
+      ),
+    );
+    print('Job List Total: ${value.length} | $value');
   } on MoisesException catch (e) {
-    log('Error : ${e.error}');
+    print('Error : ${e.error}');
   }
 }
 
-Future<void> getJobById(Moises moises, String id) async {
+Future<void> getJob(Moises moises) async {
   try {
+    const String id = '00000000-0000-0000-0000-000000000000';
     final MoisesJobModel value = await moises.job.get(id);
-    log('Job : $value');
+    print('Job : ${value.toJson()}');
   } on MoisesException catch (e) {
-    log('Error : ${e.error}');
+    print('Error : ${e.error}');
   }
 }
 
-Future<void> createJob(Moises moises, MoisesNewJobModel newJob) async {
+Future<void> createJob(Moises moises) async {
   try {
-    final MoisesNewJobResultModel value = await moises.job.create(newJob);
-    log('New Job Result : $value');
+    final MoisesNewJobResultModel value = await moises.job.create(
+      const MoisesNewJobModel(
+        name: 'job-name',
+        workflow: 'my-workflow-name',
+        params: {
+          'inputUrl': 'https://your-server.com/some-audio.wav',
+        },
+      ),
+    );
+    print('New Job Result : ${value.toJson()}');
   } on MoisesException catch (e) {
-    log('Error : ${e.error}');
+    print('Error : ${e.error}');
   }
 }
 
-Future<void> deleteJob(Moises moises, String id) async {
+Future<void> deleteJob(Moises moises) async {
   try {
+    const String id = '00000000-0000-0000-0000-000000000000';
     await moises.job.delete(id);
-    log('Job $id was successfully deleted');
+    print('Job $id was successfully deleted');
   } on MoisesException catch (e) {
-    log('Error : ${e.error}');
+    print('Error : ${e.error}');
   }
 }
