@@ -3,11 +3,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:moises/moises.dart';
 
 void main() {
-  const model = MoisesError(statusCode: 401, code: 'P2023', error: 'Unauthorized', message: '');
+  const model = MoisesError(
+      statusCode: 401, code: 'P2023', error: 'Unauthorized', message: '');
 
-  const json = {'statusCode': 401, 'code': 'P2023', 'error': 'Unauthorized', 'message': ''};
+  const json = {
+    'statusCode': 401,
+    'code': 'P2023',
+    'error': 'Unauthorized',
+    'message': ''
+  };
 
-  const jsonString = '{"statusCode":401,"code":"P2023","error":"Unauthorized","message":""}';
+  const jsonString =
+      '{"statusCode":401,"code":"P2023","error":"Unauthorized","message":""}';
 
   test('must convert from json to model', () async {
     final v = MoisesError.fromJson(json);
@@ -33,9 +40,9 @@ void main() {
     expect(v, equals(model));
   });
 
-  test('must convert from DioError to MoisesError', () async {
-    final error = DioError(requestOptions: RequestOptions());
-    final v = MoisesError.fromDioError(error);
+  test('must convert from DioException  to MoisesError', () async {
+    final error = DioException(requestOptions: RequestOptions());
+    final v = MoisesError.fromDioException(error);
     expect(v, isA<MoisesError>());
   });
 }
