@@ -17,9 +17,9 @@ class MoisesWorkFlow extends IMoisesWorkFlow {
     MoisesWorkflowFilterModel filter,
   ) async {
     final response = await _connect.get(path, queryParameters: filter.toJson());
-    print('response.data = ${response.data}');
+
     List<dynamic> data = response.data['workflows'];
-    print('data = ${data.map((e) => print(e))}');
+
     return data.map((e) => MoisesWorkflowModel.fromJson(e)).toList();
   }
 }
