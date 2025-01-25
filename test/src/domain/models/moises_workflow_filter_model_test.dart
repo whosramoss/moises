@@ -2,17 +2,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:moises/moises.dart';
 
 void main() {
-  const model = MoisesNewJobParamsModel(
-    inputUrl: 'https://your-server.com/some-audio.m4a',
-  );
+  const model = MoisesWorkflowFilterModel(page: 1, size: 20);
 
-  const json = {'inputUrl': 'https://your-server.com/some-audio.m4a'};
+  const json = {'page': 1, 'size': 20};
 
-  const jsonString = '{"inputUrl":"https://your-server.com/some-audio.m4a"}';
+  const jsonString = '{"size":20,"page":1}';
 
   test('must convert from json to model', () async {
-    final v = MoisesNewJobParamsModel.fromJson(json);
-    expect(v, isA<MoisesNewJobParamsModel>());
+    final v = MoisesWorkflowFilterModel.fromJson(json);
+    expect(v, isA<MoisesWorkflowFilterModel>());
     expect(v, equals(model));
   });
 
@@ -29,8 +27,8 @@ void main() {
   });
 
   test('must convert from string to model', () async {
-    final v = MoisesNewJobParamsModel.fromString(jsonString);
-    expect(v, isA<MoisesNewJobParamsModel>());
+    final v = MoisesWorkflowFilterModel.fromString(jsonString);
+    expect(v, isA<MoisesWorkflowFilterModel>());
     expect(v, equals(model));
   });
 }

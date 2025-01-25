@@ -37,12 +37,22 @@ class MoisesError extends Equatable {
     return MoisesError.fromJson(jsonDecode(json));
   }
 
-  /// Pass a [DioError] and returns the resulting object as [MoisesError].
-  factory MoisesError.fromDioError(DioError e) {
+  /// Pass a [DioException ] and returns the resulting object as [MoisesError].
+  factory MoisesError.fromDioException(DioException e) {
     return MoisesError(
       statusCode: e.response?.statusCode ?? 0,
       error: e.type.name,
       message: e.message ?? '',
+      code: null,
+    );
+  }
+
+  /// Object with a 404 status and "Not Found" message
+  factory MoisesError.notFound() {
+    return const MoisesError(
+      statusCode: 404,
+      error: '',
+      message: 'Not Found',
       code: null,
     );
   }

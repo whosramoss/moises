@@ -1,6 +1,6 @@
 name: moises
 description: Moises.AI API Client for dart to access developer account data
-version: 1.0.1
+version: 2.0.0
 
 repository: https://github.com/whosramoss/moises
 issue_tracker: https://github.com/whosramoss/moises/issues
@@ -16,9 +16,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^5.0.0 
-  json_annotation: ^4.8.0
-  equatable: ^2.0.5
+  dio: ^5.7.0 
+  json_annotation: ^4.9.0
+  equatable: ^2.0.7
 
 dev_dependencies:
   flutter_test: 

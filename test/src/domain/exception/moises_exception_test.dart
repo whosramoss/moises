@@ -10,13 +10,14 @@ void main() {
     'message': '',
   };
 
-  final dioError = DioError(requestOptions: RequestOptions());
+  final dioException = DioException(requestOptions: RequestOptions());
+
   test('must test if has stackTrace', () async {
-    const v = MoisesException(error: jsonError);
+    final v = MoisesException.onError(null, jsonError);
     expect(v, isA<MoisesException>());
     expect(v.stackTrace, isNull);
 
-    const v2 = MoisesException(stackTrace: StackTrace.empty, error: jsonError);
+    final v2 = MoisesException.onError(StackTrace.empty, jsonError);
     expect(v2, isA<MoisesException>());
     expect(v2.stackTrace, isNotNull);
   });
@@ -32,7 +33,7 @@ void main() {
     });
 
     test('with Dio error', () async {
-      final v = MoisesException.onError(StackTrace.empty, dioError);
+      final v = MoisesException.onError(StackTrace.empty, dioException);
       expect(v, isA<MoisesException>());
       expect(v.error, isA<MoisesError>());
       expect(v.stackTrace, isA<StackTrace>());
@@ -42,8 +43,9 @@ void main() {
     test('with null error', () async {
       final v = MoisesException.onError(StackTrace.empty, null);
       expect(v, isA<MoisesException>());
-      expect(v.error, isNull);
+      expect(v.error, isA<MoisesError>());
       expect(v.stackTrace, isA<StackTrace>());
+      expect(v.error, isNotNull);
       expect(v.stackTrace, isNotNull);
     });
   });

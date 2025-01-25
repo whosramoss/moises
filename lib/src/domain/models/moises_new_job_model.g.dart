@@ -10,13 +10,14 @@ MoisesNewJobModel _$MoisesNewJobModelFromJson(Map<String, dynamic> json) =>
     MoisesNewJobModel(
       name: json['name'] as String? ?? '',
       workflow: json['workflow'] as String? ?? '',
-      params: MoisesNewJobParamsModel.fromJson(
-          json['params'] as Map<String, dynamic>),
+      params: json['params'] as Map<String, dynamic>,
+      metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$MoisesNewJobModelToJson(MoisesNewJobModel instance) =>
     <String, dynamic>{
       'name': instance.name,
       'workflow': instance.workflow,
-      'params': instance.params.toJson(),
+      'params': instance.params,
+      'metadata': instance.metadata,
     };

@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'package:moises/src/domain/models/moises_new_job_params_model.dart';
-
 part 'moises_new_job_model.g.dart';
 
 /// The [MoisesNewJobModel] class.
@@ -18,13 +16,17 @@ class MoisesNewJobModel extends Equatable {
   final String workflow;
 
   /// The New Job params
-  final MoisesNewJobParamsModel params;
+  final Map<String, dynamic> params;
+
+  /// The New Job metadata
+  final Map<String, dynamic>? metadata;
 
   /// Instance of [MoisesNewJobModel].
   const MoisesNewJobModel({
     required this.name,
     required this.workflow,
     required this.params,
+    this.metadata,
   });
 
   /// Parses the Json String and returns the resulting object as [MoisesNewJobModel].
@@ -43,5 +45,5 @@ class MoisesNewJobModel extends Equatable {
   Map<String, dynamic> toJson() => _$MoisesNewJobModelToJson(this);
 
   @override
-  List<Object?> get props => [name, workflow, params];
+  List<Object?> get props => [name, workflow, params, metadata];
 }

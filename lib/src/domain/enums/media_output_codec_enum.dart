@@ -1,5 +1,5 @@
 /// ## Supported Media Formats (Output Codec's)
-/// Check for more info : [docs/media-formats](https://developer.moises.ai/docs/media-formats)
+/// Check for more info : [docs/media-formats](https://music.ai/docs/api/file-formats/)
 enum MediaOutputCodecFormatEnum {
   /// # Codec MP3
   /// - **Description** : `MPEG-1, MPEG-2 Audio Layer 3`

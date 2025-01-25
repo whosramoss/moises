@@ -18,6 +18,7 @@ MoisesJobModel _$MoisesJobModelFromJson(Map<String, dynamic> json) =>
       completedAt: json['completedAt'] as String? ?? '',
       batchName: json['batchName'],
       result: json['result'] as Map<String, dynamic>,
+      metadata: json['metadata'] as Map<String, dynamic>,
       workflowParams: MoisesWorkflowParamsModel.fromJson(
           json['workflowParams'] as Map<String, dynamic>),
     );
@@ -34,5 +35,6 @@ Map<String, dynamic> _$MoisesJobModelToJson(MoisesJobModel instance) =>
       'completedAt': instance.completedAt,
       'batchName': instance.batchName,
       'result': instance.result,
+      'metadata': instance.metadata,
       'workflowParams': instance.workflowParams.toJson(),
     };
